@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import "./Navbar.css";  
-import logo from "../../assets/logo.png"
+import logo from "../../assets/cc.png"
 import arrow_icon from "../../assets/arrow_icon.png"
 import { CoinContext } from '../../context/CoinContext';
 import { Link } from 'react-router-dom';
@@ -62,7 +62,9 @@ const Navbar = () => {
         <Link to={`/`}><li>Home</li></Link>
         <li>Features</li>
         <li>Pricing</li>
+        <Link to ="/blog">
         <li>Blog</li>
+        </Link>
       </ul>
       <div className="nav-right">
         <select onChange={currencyHandler}>
@@ -71,7 +73,9 @@ const Navbar = () => {
             <option value="inr">INR</option>
             <option value="ngn">NGN</option>
         </select>
-        <button>Sign up <img src={arrow_icon}/></button>
+        <Link to = "/signup">
+          <button>Sign up <img src={arrow_icon}/></button>
+        </Link>
       </div>
     </div>
   )

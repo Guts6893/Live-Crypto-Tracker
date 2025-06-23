@@ -9,7 +9,6 @@ const CoinContextProvider = (props) => {
         name: "usd",
         symbol: "$"
     })
-
     const fetchAllCoin = async () => {
         const options = {
             method: 'GET',
@@ -24,22 +23,18 @@ const CoinContextProvider = (props) => {
         .then(response => setAllCoin(response))
         .catch(err => console.error(err));
     }
-
     useEffect(() => {
         fetchAllCoin();
     }, [currency])
-
     const contextValue = {
         allCoin,
         currency,
         setCurrency
     }
-
     return (
         <CoinContext.Provider value={contextValue}>
             {props.children}
         </CoinContext.Provider>
     )
 }
-
 export default CoinContextProvider;
